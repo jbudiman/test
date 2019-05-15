@@ -31,9 +31,9 @@ curl "api_endpoint_here"
 
 > Make sure to replace `FooBar` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Bitcoin.World uses API keys to allow access to the API. You can register a new Bitcoin.World API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Bitcoin.World expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: FooBar`
 
