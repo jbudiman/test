@@ -1,0 +1,623 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-account" class="toc-h2 toc-link" data-title="Get Account">Get Account</a>
+                  </li>
+                  <li>
+                    <a href="#create-account" class="toc-h2 toc-link" data-title="Create Account">Create Account</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#rates" class="toc-h1 toc-link" data-title="Rates">Rates</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-orders" class="toc-h2 toc-link" data-title="Get Orders">Get Orders</a>
+                  </li>
+                  <li>
+                    <a href="#create-orders" class="toc-h2 toc-link" data-title="Create Orders">Create Orders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#customers" class="toc-h1 toc-link" data-title="Customers">Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#register-customer-kyc" class="toc-h2 toc-link" data-title="Register Customer KYC">Register Customer KYC</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to Bitcoin World partner integration API. </p>
+
+<p>This API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: FooBar"</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>FooBar</code> with your API key.</p>
+</blockquote>
+
+<p>Bitcoin.World uses API keys to allow access to the API. You can register a new Bitcoin.World API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+
+<p>Bitcoin.World expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: FooBar</code></p>
+
+<aside class="notice">
+You must replace <code>FooBar</code> with your personal API key.
+</aside>
+<h1 id='accounts'>Accounts</h1>
+<p>The Api endpoints to manage accounts. </p>
+<h2 id='get-account'>Get Account</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitcoin.world/accounts"</span>
+  -H <span class="s2">"Authorization: foobar"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:
+<code>GET https://api.bitcoin.world/accounts/id/&lt;ACCOUNT_ID&gt;</code></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kyc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incomplete"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"missing document"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a customer&#39;s account details.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET http://api.bitcoin.world/accounts/&lt;ACCOUNT_ID&gt;</code> </p>
+<h3 id='parameters'>Parameters</h3>
+<p><em>TBD</em></p>
+<h2 id='create-account'>Create Account</h2>
+<p>This endpoint registers an account for a customer. The account registration requires a bare minimum of an email address 
+and a mobile phone to create. </p>
+
+<p>On successful registration, an account id will be provided for the customer.</p>
+
+<p>You maybe able to update customer details by adding KYC details. Adding KYC detail for the customer will allow them
+to access greater tier benefits such as being able to purchase with more payments and with higher daily limit.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p>POST http://api.bitcoin.world/accounts/</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mobile_phone</td>
+<td>Yes</td>
+<td>mobile numbers of type <em>string</em>. International format <code>61412708135</code></td>
+</tr>
+<tr>
+<td>email</td>
+<td>Yes</td>
+<td>email address of type <em>string</em>.</td>
+</tr>
+</tbody></table>
+<h1 id='rates'>Rates</h1>
+<p>This endpoint returns the exchange rates.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://api.bitcoin.world/rates/</code></p>
+<h1 id='orders'>Orders</h1>
+<p>The Api endpoints to manage order creation.</p>
+<h2 id='get-orders'>Get Orders</h2>
+<p>Returns the order status by <code>order_id</code>. 
+The <code>order_id</code> can be obtained after order has been created with the <em>Create Orders</em> API endpoint below.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://api.bitcoin.world/orders/&lt;ORDER_ID&gt;</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>Yes</td>
+<td>The order id returned by <code>create orders</code> endpoint</td>
+</tr>
+</tbody></table>
+<h2 id='create-orders'>Create Orders</h2>
+<p>This endpoint creates an order. 
+When order is created, customer should be redirected to bitcoin.world url checkout page the url is indicated in the response.
+The response will also contain an <code>order_id</code>, that can be used to check the order status.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://api.bitcoin.world/orders</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin_amount</td>
+<td>Yes</td>
+<td>the cryptocurrency amount of type <em>float</em> up to <em>8</em> decimal points. e.g 0.12345678</td>
+</tr>
+<tr>
+<td>coin_code</td>
+<td>Yes</td>
+<td>the cryptocurrency code of type <em>string</em>. e.g. &#39;BTC&#39;. Code must be offered in the rates API</td>
+</tr>
+<tr>
+<td>fiat_amount</td>
+<td>Yes</td>
+<td>the fiat currency amount of type <em>float</em> up to <em>2</em> decimal points.</td>
+</tr>
+<tr>
+<td>fiat_code</td>
+<td>Yes</td>
+<td>the fiat currency code of type <em>string</em> e.g. &#39;AUD&#39;. Code must be offered in the rates API</td>
+</tr>
+<tr>
+<td>wallet_address</td>
+<td>Yes</td>
+<td>Wallet address of type <em>string</em>. We would prefer you to do the validation on your side.</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>Yes</td>
+<td>@internal Discuss with the team if this is necessary. The account_id the order belongs to</td>
+</tr>
+<tr>
+<td>*rate_id</td>
+<td>No</td>
+<td>@internal Discuss with the team if this is necessary</td>
+</tr>
+<tr>
+<td>callback_url_on_success</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>callback_url_on_failure</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This API endpoint requires an authentication header
+</aside>
+<h1 id='customers'>Customers</h1>
+<p>The Api endpoints registers the customers KYC <em>(This can probably be combined with Accounts api)</em></p>
+<h2 id='register-customer-kyc'>Register Customer KYC</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.bitcoinworld.com/customers"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://example.com/api/customers</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>account_id</td>
+<td>Yes</td>
+<td>The account ID</td>
+</tr>
+<tr>
+<td>given_name</td>
+<td>Yes</td>
+<td>The first name of the customer</td>
+</tr>
+<tr>
+<td>middle_name</td>
+<td>No</td>
+<td>The middle name of the customer, if any.</td>
+</tr>
+<tr>
+<td>surname</td>
+<td>Yes</td>
+<td>The family name of the customer</td>
+</tr>
+<tr>
+<td>flat_number</td>
+<td>No</td>
+<td>The address flat number</td>
+</tr>
+<tr>
+<td>street_number</td>
+<td>Yes</td>
+<td>The address street number</td>
+</tr>
+<tr>
+<td>street_name</td>
+<td>Yes</td>
+<td>The address street name</td>
+</tr>
+<tr>
+<td>street_type</td>
+<td>Yes</td>
+<td>The address street type</td>
+</tr>
+<tr>
+<td>suburb</td>
+<td>Yes</td>
+<td>The address suburb</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Yes</td>
+<td>The address state</td>
+</tr>
+<tr>
+<td>post_code</td>
+<td>Yes</td>
+<td>The address post code</td>
+</tr>
+<tr>
+<td>country</td>
+<td>Yes</td>
+<td>The country of residence</td>
+</tr>
+<tr>
+<td>dob</td>
+<td>Yes</td>
+<td>The date of birth in <em>YYYY-MM-DD</em> format of type <em>string</em></td>
+</tr>
+<tr>
+<td>document_ids</td>
+<td>Yes</td>
+<td>The document identification number of type <em>string</em></td>
+</tr>
+<tr>
+<td>document_type</td>
+<td>No</td>
+<td>The identification document of type <em>string</em>. e.g. <em>passport</em></td>
+</tr>
+<tr>
+<td>document_file_urls</td>
+<td>Yes</td>
+<td>The document link image or pdf file(s) that is accessible by us.</td>
+</tr>
+</tbody></table>
+
+<p>You can add multiple file urls <code>document_file_urls</code> by adding JSON collection like below:</p>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="s2">"https://example.com/id_front.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"https://example.com/id_back.jpg"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+Must attach authentication header
+</aside>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
